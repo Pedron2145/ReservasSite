@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- estilos globais e estilos exclusivos de login -->
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/loginStyles.css">
+    <script src="/js/loginReg.js" defer></script>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Reserva de Itens</h1>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Entrar</h2>
+            <form action="/login" method="post">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+
+                <div class="modal-actions auth-actions">
+                    <button class="button save" type="submit">Entrar</button>
+                    <a href="/register" class="button cancel">Registrar</a>
+                    <a href="/forgot-password" class="button forgot-password">Esqueci a senha</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sistema de Reserva de Itens. Todos os direitos reservados.</p>
+        <img src="/styles/Perseverance.png" alt="Logo do Sistema de Reserva de Itens" class="logo">
+    </footer>
+</body>
+</html>

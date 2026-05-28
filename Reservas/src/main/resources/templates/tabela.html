@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Itens</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+    <!-- Página principal com controle de itens. A tabela é preenchida dinamicamente pelo JavaScript. -->
+    <h1>Bem-vindo ao Sistema de Reserva de Itens</h1>
+    <div class="tableaItens" id="tabelaItens">
+        <div class="buttonsAddEdit">
+            <button class="add" id="addItemBtn" onclick="abrirModalAdd()">Adicionar Item</button>
+            <button class="edit" id="editItemBtn" onclick="abrirModalEdit()">Editar Item</button>
+            <button class="delete" id="deleteItemBtn" onclick="abrirModalDelete()">Deletar Item</button>
+        </div>
+    <div class="tabela-rolagem" id="tabela-rolagem">
+        <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome do Item</th>
+                <th>Disponibilidade</th>
+                <th>Localização</th>
+                <th colspan="2">Ações</th>
+            </tr>
+        </thead>
+        <tbody id="item-table-body">
+            <!-- Os itens serão carregados aqui via JavaScript -->
+        </tbody>
+    </table></div>
+    </div>
+
+    <!-- Overlay que fecha modais ao ser clicado fora do conteúdo. -->
+    <div class="modal-overlay hidden" id="modalOverlay" onclick="fecharModalOverlay()"></div>
+
+    <!-- Modal para inclusão de novo item. -->
+    <div class="modal hidden" id="addModal">
+        <div class="modal-header">
+            <h2>Adicionar Item</h2>
+            <button class="close-button" onclick="fecharModal('addModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <label for="addItemId">ID</label>
+            <input id="addItemId" type="text" placeholder="ID do item">
+            <label for="addItemNome">Nome do Item</label>
+            <input id="addItemNome" type="text" placeholder="Nome do item">
+            <label for="addItemDisponibilidade">Disponibilidade</label>
+            <select id="addItemDisponibilidade">
+                <option value="Disponível">Disponível</option>
+                <option value="Reservado">Reservado</option>
+            </select>
+            <label for="addItemLocalizacao">Localização</label>
+            <input id="addItemLocalizacao" type="text" placeholder="Localização do item">
+        </div>
+        <div class="modal-actions">
+            <button class="button save" onclick="salvarNovoItem()">Salvar</button>
+            <button class="button cancel" onclick="fecharModal('addModal')">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal para editar os dados de um item já existente na tabela. -->
+    <div class="modal hidden" id="editModal">
+        <div class="modal-header">
+            <h2>Editar Item</h2>
+            <button class="close-button" onclick="fecharModal('editModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <label for="editItemId">ID do item</label>
+            <input id="editItemId" type="text" placeholder="Digite o ID para buscar">
+            <button class="button secondary" onclick="buscarItemParaEditar()">Buscar</button>
+            <label for="editItemNome">Nome do Item</label>
+            <input id="editItemNome" type="text" placeholder="Novo nome do item">
+            <label for="editItemDisponibilidade">Disponibilidade</label>
+            <select id="editItemDisponibilidade">
+                <option value="Disponível">Disponível</option>
+                <option value="Reservado">Reservado</option>
+            </select>
+            <label for="editItemLocalizacao">Localização</label>
+            <input id="editItemLocalizacao" type="text" placeholder="Nova localização do item">
+        </div>
+        <div class="modal-actions">
+            <button class="button save" onclick="salvarEdicao()">Salvar Alterações</button>
+            <button class="button cancel" onclick="fecharModal('editModal')">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal de confirmação para exclusão permanente de um item. -->
+    <div class="modal hidden" id="deleteModal">
+        <div class="modal-header">
+            <h2>Excluir Item</h2>
+            <button class="close-button" onclick="fecharModal('deleteModal')">×</button>
+        </div>
+        <div class="modal-body">
+            <label for="deleteItemId">ID do item</label>
+            <input id="deleteItemId" type="text" placeholder="Digite o ID do item a ser removido">
+            <p class="modal-note">A exclusão é permanente, confirme o ID do item.</p>
+        </div>
+        <div class="modal-actions">
+            <button class="button delete" onclick="confirmarDelete()">Excluir</button>
+            <button class="button cancel" onclick="fecharModal('deleteModal')">Cancelar</button>
+        </div>
+        
+    </div>
+    <div class="auth-actionsTable">
+                    <a href="/login" class="button save" type="submit">Entrar</a>
+                    <a href="/register" class="button cancel">Registrar</a>
+                </div>
+    <footer>
+        <p>&copy; 2024 Sistema de Reserva de Itens. Todos os direitos reservados.</p>
+        <img src="/styles/Perseverance.png" alt="Logo do Sistema de Reserva de Itens" class="logo">
+    </footer>
+</body>
+</html>

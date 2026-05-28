@@ -1,0 +1,368 @@
+/* Estilos globais da página. */
+body {
+    background-color: #bdbdbd;
+    margin: 0;
+    padding: 0;
+    /*overflow: hidden;*/
+}
+footer{
+    text-align: center;
+    padding: 8px 12px;
+    background-color: #777777;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+    box-sizing: border-box;
+    font-size: 13px;
+
+
+}
+p{
+    margin: 0;
+    font-size: 14px;
+}
+img.logo {
+    width: 32px;
+    height: 32px;
+    margin-top: 6px;
+    border-radius: 50%;
+}
+h1{
+    text-align: center;
+    margin-top: 40px;
+    border: 2px transparent;
+    padding-bottom: 10px;
+    background-color: #c0c0c0;
+    color: rgb(92, 74, 156);
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Estilo da tabela principal de itens. */
+table {
+    width: 100%;
+    margin: 20px auto;
+    /*border-collapse: collapse;*/
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-top: 100px;
+    padding: 0 20px;
+    background-color: #c5c5c5;
+    color: rgb(92, 74, 156);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.tabela-rolagem {
+    max-height: 350px;
+    overflow-y: auto;
+    width: max-content;
+    max-width: 100%;
+    margin: 20px auto;
+    
+    /*Scrowbar*/
+    scrollbar-width: thin;
+    scrollbar-color: #888 #b1b1b1;
+    scrollbar-gutter: stable;
+    scrollbar-track-color: #ff0000;
+    
+    
+
+}
+
+
+.tabela-rolagem thead {
+    position: sticky;
+    top: 0;
+    background-color: #c5c5c5;
+    z-index: 1;
+}
+th, td {
+    border: none;
+    padding: 16px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*background-color: #919191;*/
+}
+th {
+    background-color: #928faf;
+}
+#reservDev {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#cancelarReserva {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/*#reservDevTd, #cancelarReservaTd {
+    display: inline-block;
+    max-width: fit-content;
+    max-height: fit-content;
+    border: none;
+
+}*/
+
+#reservDevTd{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+#cancelarReservaTd{
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#reservDevTd::before, #cancelarReservaTd::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+}
+#reservDevTd::after, #cancelarReservaTd::after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+}
+/*animações dos botões de reserva
+ e cancelamento de reserva, para dar um feedback visual
+  ao usuário quando ele clicar em um dos botões. Por exemplo, quando o usuário clicar no botão
+   "Reservar", o botão pode mudar de cor para indicar que a ação foi realizada com sucesso.
+    Da mesma forma, quando o usuário clicar no botão "Cancelar Reserva",
+     o botão pode mudar de cor para indicar que a reserva foi cancelada.*/
+#reservDevTd:active {
+    background-color: #45a049;
+}
+#cancelarReserva:active {
+    background-color: #e53935;
+}
+#reservDevTd:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#cancelarReservaTd:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#reservDevTd:disabled, #cancelarReservaTd:disabled {
+    opacity: 0.6;
+}
+
+
+/* Barra de ação para botões de adicionar, editar e deletar. */
+.buttonsAddEdit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: fit-content;
+    max-height: fit-content;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #b9b9b9;
+    padding: 10px;
+}
+.add {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.edit {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.delete {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add:active {
+    background-color: #1976D2;
+}
+
+.edit:active {
+    background-color: #fb8c00;
+}
+
+.delete:active {
+    background-color: #e53935;
+}
+
+/* Overlay semitransparente que bloqueia a interface e fecha modais ao clicar fora. */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}
+
+/* Estilo geral dos modais de adicionar, editar e excluir. */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    padding: 24px;
+    border-radius: 16px;
+    width: min(420px, 90%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    z-index: 60;
+}
+
+.modal.hidden,
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #4b4b4b;
+    font-size: 20px;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #555;
+}
+
+.modal-body {
+    display: grid;
+    gap: 12px;
+}
+
+.modal-body label {
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+
+.modal-body input,
+.modal-body select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button.save {
+    background-color: #2196f3;
+}
+
+.button.cancel {
+    background-color: #777;
+}
+
+.button.secondary {
+    background-color: #607d8b;
+    width: auto;
+}
+
+.button.delete {
+    background-color: #f44336;
+}
+
+.modal-note {
+    color: #555;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.auth-actionsTable {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+
+

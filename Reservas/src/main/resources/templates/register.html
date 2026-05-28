@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <!-- estilos globais, estilos de login e ajustes exclusivos de registro -->
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/reg.css">
+    <link rel="stylesheet" href="/styles/loginStyles.css">
+    <script src="/js/loginReg.js" defer></script>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Reserva de Itens</h1>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Registrar</h2>
+            <form action="/register" method="post" id="registerForm">
+                <label for="username">Nome de Usuário</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirmPassword">Confirmação de senha</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                <div class="modal-actions auth-actions">
+                    <button class="button save" type="submit">Registrar</button>
+                    <a href="/login" class="button cancel">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sistema de Reserva de Itens. Todos os direitos reservados.</p>
+        <img src="/styles/Perseverance.png" alt="Logo do Sistema de Reserva de Itens" class="logo">
+    </footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/**
+ * reg.css
+ * Estilos exclusivos para a página de registro.
+ * Este arquivo mantém apenas as variações específicas do formulário de cadastro.
+ */
+.auth-card h2 { color: rgb(92, 74, 156); }
+
+.auth-card input:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(92, 74, 156, 0.12);
+    border-color: rgba(92, 74, 156, 0.6);
+}
+
+.auth-card input[required] {
+    background-color: white;
+}
+
+.field-error {
+    color: #e53935;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* Pequenas variações para o botão de registrar na página de registro */
+.auth-actions .button.save {
+    background-color: rgb(92, 74, 156);
+}
+
+.auth-actions .button.save:active {
+    background-color: rgba(92, 74, 156, 0.9);
+}
+
+/* Responsividade já definida em styles.css; aqui mantemos ajustes finos */
+@media (max-width: 480px) {
+    .auth-card input { font-size: 16px; }
+}
